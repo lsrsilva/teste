@@ -14,11 +14,6 @@ return new class extends Migration
         Schema::create('assistencia', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('cliente_id')->constrained(table: 'cliente', indexName: 'fk_cliente_id');
-            $table->dateTime('data');
-            $table->string('descricao');
-            $table->string('tecnico');
-            $table->dateTime('data_resolucao');
         });
     }
 

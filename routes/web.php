@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssistenciaController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ClienteController;
 /*
@@ -23,3 +24,5 @@ Route::post('/cliente', [ClienteController::class, 'save']);
 Route::get('/assistencia', function () {
     return view('assistencia');
 });
+Route::get('/assistencia/create', AssistenciaController::class . "@create")->name("assistencia.create");
+Route::post('/assistencia', [AssistenciaController::class, 'save']);
